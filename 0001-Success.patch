@@ -1,0 +1,191 @@
+From dd9a1986e0d5a7034adc638cc9d62f1d896d63e1 Mon Sep 17 00:00:00 2001
+From: SHREELEKHAS <shreelekha2504@gmail.com>
+Date: Sun, 22 Sep 2024 12:14:01 +0530
+Subject: [PATCH] Success
+
+---
+ 0001-Re-add-sample-unit-test.patch      |  44 ++++++++++++++++++++++++
+ __pycache__/client3.cpython-312.pyc     | Bin 0 -> 1647 bytes
+ __pycache__/client_test.cpython-312.pyc | Bin 0 -> 1781 bytes
+ client3.py                              |   8 +++--
+ client_test.py                          |  10 +++++-
+ multi_commit.patch                      |   0
+ 6 files changed, 59 insertions(+), 3 deletions(-)
+ create mode 100644 0001-Re-add-sample-unit-test.patch
+ create mode 100644 __pycache__/client3.cpython-312.pyc
+ create mode 100644 __pycache__/client_test.cpython-312.pyc
+ create mode 100644 multi_commit.patch
+
+diff --git a/0001-Re-add-sample-unit-test.patch b/0001-Re-add-sample-unit-test.patch
+new file mode 100644
+index 0000000..a67988d
+--- /dev/null
++++ b/0001-Re-add-sample-unit-test.patch
+@@ -0,0 +1,44 @@
++From 879221fec2b863d37d5b493f02a530a8098ef6ef Mon Sep 17 00:00:00 2001
++From: Joe Ferrer <joe@theforage.com>
++Date: Wed, 1 Mar 2023 00:11:51 +1100
++Subject: [PATCH] Re-add sample unit test
++
++---
++ client_test.py | 25 +++++++++++++++++++++++++
++ 1 file changed, 25 insertions(+)
++ create mode 100644 client_test.py
++
++diff --git a/client_test.py b/client_test.py
++new file mode 100644
++index 0000000..af2bf26
++--- /dev/null
+++++ b/client_test.py
++@@ -0,0 +1,25 @@
+++import unittest
+++from client3 import getDataPoint
+++
+++class ClientTest(unittest.TestCase):
+++  def test_getDataPoint_calculatePrice(self):
+++    quotes = [
+++      {'top_ask': {'price': 121.2, 'size': 36}, 'timestamp': '2019-02-11 22:06:30.572453', 'top_bid': {'price': 120.48, 'size': 109}, 'id': '0.109974697771', 'stock': 'ABC'},
+++      {'top_ask': {'price': 121.68, 'size': 4}, 'timestamp': '2019-02-11 22:06:30.572453', 'top_bid': {'price': 117.87, 'size': 81}, 'id': '0.109974697771', 'stock': 'DEF'}
+++    ]
+++    """ ------------ Add the assertion below ------------ """
+++
+++  def test_getDataPoint_calculatePriceBidGreaterThanAsk(self):
+++    quotes = [
+++      {'top_ask': {'price': 119.2, 'size': 36}, 'timestamp': '2019-02-11 22:06:30.572453', 'top_bid': {'price': 120.48, 'size': 109}, 'id': '0.109974697771', 'stock': 'ABC'},
+++      {'top_ask': {'price': 121.68, 'size': 4}, 'timestamp': '2019-02-11 22:06:30.572453', 'top_bid': {'price': 117.87, 'size': 81}, 'id': '0.109974697771', 'stock': 'DEF'}
+++    ]
+++    """ ------------ Add the assertion below ------------ """
+++
+++
+++  """ ------------ Add more unit tests ------------ """
+++
+++
+++
+++if __name__ == '__main__':
+++    unittest.main()
++-- 
++2.36.1.windows.1
++
+diff --git a/__pycache__/client3.cpython-312.pyc b/__pycache__/client3.cpython-312.pyc
+new file mode 100644
+index 0000000000000000000000000000000000000000..56ddc720ea846483e2f58d7b8351d8cdde65a7eb
+GIT binary patch
+literal 1647
+zcmah}O>7%Q6rQnn*LG|tabhP;;)+eB(zwL=RYb5-I5aNm0V^rAkX69icqhp^w%6TV
+zQ^h!vg*do^gDV7a1(Y0vA|ZMLaVl`&z$K1V)l4}QRUCREO*rMmo3#x=sl-V0=Dj!X
+zee>qMH}i|v+lF9#a`(^W$1a2(GodxSP3G`ZjL;@hkb+Z4YOGkomTZ&kicR7ayTmKp
+z2S^eW9;kyj6=7`%A^mF`A}*M1gx>)aHd^Z}di!&PBsc7$<f+EqaZ2pT{^N3kPo6%h
+zBV6*ilUl&VN!v;NPE*y2qqQan|KC>fxsZyaF5-jeLlAv8oFb6!7RDk6I=>W<dZb>`
+zOS*`E20+2)l;R-%&#>Yo0iZ6@1GJ6w0(F1kYI$Sy(F<I|+5<igK<M3R-XJghn>nz%
+z!=ZJ&jziujEa+H%aMd)kk<rnVmXK4cnqfw!$EL?dujh!q{)(zxcyB}f3-X_6*1)<c
+z#ER@N4>LeEkqZ@|!hOJRVDle4(Ak(yu`}9=bi?)^3+@>f_JXZo&ofUx?*>e+fSIPi
+zEpxA<kdS{-oYOTWmms2?N{Qww5i^7+L=oSWQ#oRYrY5eC4AEs1EJQ^%<*cS=Op)@2
+zsU_B^!_>0zB~_t(R#y|GA<M?v6PB<Lru=eBlg$uM`Rh5&Bs#k-b%8^?VebOl2CGAA
+zk--BI**F@z7+Jh(5Zzdmm9&~!T-J1Xg@lvYbRulrAYl_c!{dvIlu9z@<Vbd%dRB-z
+z3lYw-2=#V`#30`QQbdoqnYzbUK6f)#jQ-XcD3i+NYR~gqH>y3Owa&5P<!9;Y-kwTd
+z)q7@3u6oWDqjh&@IaFEL=6BuUT`qhGxF~VFwHa@flD!zKlvu&m1H|jL0xDou0!X_(
+ze@1+jm?C6V)kJMsv~m%bMLDB1`6W?jXtA$Q$VMH_{T8!iusu=K+225&aP2D$N%w<z
+z9;U(0Z(P~YULJhEQ19rjySvJ7R^7o}E~s}{Zt-|pRx|N<-Z9TgqlkHzD4XIC6ep4w
+zhDFG4B<~z<1Qa>Kp}f;NMm%eT`Y4w)v<ww=2w6+h_MDzdsY@d|fnGOEDl}xu&tHvR
+zS)e#(mBR{<I^*$-oF?%&<y7bh$^*s<p*T)?=oQ7FjuwgoP_!(8W1#qH*`%CKWQ7V=
+zD;ZR<(qicB@3b0Ahx8)d!w738t0$ood`!XaY~}07Ig^HtPmz~(_&N}KV#Xgp_U#zs
+z!}ADx9wP5U6xbJ#Yq-e6!aIxjKycuZ13!;X?{^{2Q_Anz`+oQOZk?^*kB2^d=K!_w
+zlO<gD4V3+x{kQrnm%fbMjy(uYRD%=WOnp0Zcjlh=p768x2k%cEwaK|!aQ;E?S~YmB
+z7JRGbTPO*SoEPgIzLHQ63>+Z4OTne+uj3cKBen6_s%NAWEx%Mzw*&P7v2>|Cb@Mgq
+z@qM5BQQe!D_7>&cuBH2)#J+>MJ#9m-_EPfp^j36xsx~lQZ6CkyoOl|5==OQU^;>E9
+E8z#}1uK)l5
+
+literal 0
+HcmV?d00001
+
+diff --git a/__pycache__/client_test.cpython-312.pyc b/__pycache__/client_test.cpython-312.pyc
+new file mode 100644
+index 0000000000000000000000000000000000000000..ca05e3c2ba1a576bf44105a11d1ff2c50bd11d59
+GIT binary patch
+literal 1781
+zcmcgsO-x)>6h801pZVc;C{n<RQ&e<fW->ES1_)9p1FcEHHlYhA;LCIFV>&Q@eeWTe
+z2~9A8h=~h!?V<~p5EA3Y#HD*N>FA=9S4}i72+_nT)D0`oc{7cmF^w*~$@|Xv?)kYt
+z@0|N}Q<E2PNMHQ6SdjsKCh}|`cgAr6#XaD_g$yJ}vW$>r2_^u8tH8w#;F1nYO5OjI
+z*b{3cA?Y%gm)`&|+8Cg3<0+@Qx>uJ16osM?P!5UD1_Zk?rCV{$(r)C_IV)NBa)eMP
+z$DOF$!@LQBLxOQ(0}>)<h*D7uNVaz}lh$+AoNijlXE78?XQv$=?<3#|1<ttmfN_b-
+zTyZoPcXQ7JnR|Id-O|XL>Xv4*q}W}-18YJY7Onu?Woxi>dIii&!>Zo{z#7}D+t(Ox
+z=|UUIR+8LTXKiQLKiWzZbFS0?uqf>@Bsc{4BrZV_0`0S@Z}xFqe{cNoRW$4}TP_&s
+zq;5-Qx}=|UN5hffU^p6#MEud{NO*9hKODLgiw<1sKX`fbmz!VqU|<#lPnyG_NO*WS
+zHZV9Gi^U?gIB{iiSGHYNzMyL6vhA_bS-e**Td2*wpXN5hPd2T5a{1s_Otra;$s|m6
+zaP6m3`)8{Q<A*nq*<yTZ+IRsq;~as9z=v>1rwK5-K{HL=u%_;;Xc>cUFd*Xg^~|EJ
+z+*!$6x@pTbNjAUVe=;yRGJgw0%z2Gx)4BP@yrHG^;8G!*44SKY(83J|BlAh88dOYR
+zg$hO6Pl|fF$ke2kNv>oxOTR&PR(kW#`UySHnYzY&jIa(rUbwguEw_apzV+_I!Ut7=
+z2^MEh08+vfLpH+}NZe*wnsnt@<wEby#99Bzntz-eud{g)DVA~kv#ctM&C2?8)eZ7k
+z#drP)T(YtyR}}9frK7BLeD7}GzV)5^#fqnSYxUzE62-Eo>;CIyPw!dcZQ1sez1{a?
+zW$!DW>N{_j`vyN>E%#k6doO<#DSP5om*|-mewP)O@<hZ%j`4VKrjuMa;dIg{D*wHc
+zuyR}KmAk(%ZctXkO@LJn20a=^6G1aU3qdPE2f=v)dI${aAEO&#7pus4iC7PUNoD2t
+z8-5ga<az(`N}69abSwd5?zWbjFqccC|Dp>17Tr!8$RYf{WnuK<lCuHXcB^Vm%j&9X
+zdsQ`?=PMb~8&#E>t7b7SqOb890X-Q`sB>8c)wBcD#3r@q1{|>_Q90_7#j$EDh(k4R
+za-^lQS~{ny0hjGw$)zp2YTH%ox_+mTZTB3`O={SyPVPR6lPKyhOP{z$YnvT2Lg+(J
+zrx`=2ih>|KhL#_||5WM}hPFE&`FhK~-lu@1Is{VVR_R-@t0MW<uYEN0;mqbcRS~3a
+HXP18faWlc#
+
+literal 0
+HcmV?d00001
+
+diff --git a/client3.py b/client3.py
+index 3fc09b7..dfb6d5b 100644
+--- a/client3.py
++++ b/client3.py
+@@ -35,14 +35,16 @@ def getDataPoint(quote):
+     stock = quote['stock']
+     bid_price = float(quote['top_bid']['price'])
+     ask_price = float(quote['top_ask']['price'])
+-    price = bid_price
++    price = (bid_price + ask_price) / 2
+     return stock, bid_price, ask_price, price
+ 
+ 
+ def getRatio(price_a, price_b):
+     """ Get ratio of price_a and price_b """
+     """ ------------- Update this function ------------- """
+-    return 1
++    if price_b == 0:  # To avoid division by zero
++        return None
++    return price_a / price_b
+ 
+ 
+ # Main
+@@ -52,8 +54,10 @@ if __name__ == "__main__":
+         quotes = json.loads(urllib.request.urlopen(QUERY.format(random.random())).read())
+ 
+         """ ----------- Update to get the ratio --------------- """
++        prices={}
+         for quote in quotes:
+             stock, bid_price, ask_price, price = getDataPoint(quote)
++            prices[stock] =price
+             print("Quoted %s at (bid:%s, ask:%s, price:%s)" % (stock, bid_price, ask_price, price))
+ 
+         print("Ratio %s" % getRatio(price, price))
+diff --git a/client_test.py b/client_test.py
+index af2bf26..8e34f14 100644
+--- a/client_test.py
++++ b/client_test.py
+@@ -8,7 +8,15 @@ class ClientTest(unittest.TestCase):
+       {'top_ask': {'price': 121.68, 'size': 4}, 'timestamp': '2019-02-11 22:06:30.572453', 'top_bid': {'price': 117.87, 'size': 81}, 'id': '0.109974697771', 'stock': 'DEF'}
+     ]
+     """ ------------ Add the assertion below ------------ """
+-
++    for quote in quotes:
++      self.assertEqual(
++        getDataPoint(quote), 
++        (quote['stock'], 
++         quote['top_bid']['price'], 
++         quote['top_ask']['price'], 
++         (quote['top_bid']['price'] + quote['top_ask']['price']) / 2)  # Correct formula for the average
++    )
++      
+   def test_getDataPoint_calculatePriceBidGreaterThanAsk(self):
+     quotes = [
+       {'top_ask': {'price': 119.2, 'size': 36}, 'timestamp': '2019-02-11 22:06:30.572453', 'top_bid': {'price': 120.48, 'size': 109}, 'id': '0.109974697771', 'stock': 'ABC'},
+diff --git a/multi_commit.patch b/multi_commit.patch
+new file mode 100644
+index 0000000..e69de29
+-- 
+2.36.1.windows.1
+
